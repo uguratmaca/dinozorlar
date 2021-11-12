@@ -1,0 +1,27 @@
+{
+  "name": "dinozorlar",
+  "version": "1.0.0",
+  "description": "Correct the Turkish dinozor word",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uguratmaca/dinozorlar.git"
+  },
+  "keywords": [
+    "dinozor",
+    "twitter"
+  ],
+  "author": "Uğur Atmaca",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uguratmaca/dinozorlar/issues"
+  },
+  "homepage": "https://github.com/uguratmaca/dinozorlar#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "twitter-api-client": "^1.4.0"
+  }
+}
