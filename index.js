@@ -1,5 +1,6 @@
 require('dotenv').config();
-const { TwitterClient } = require('twitter-api-client');
+const { TwitterClient } = require('twitter-api-client'),
+    schedule = require('node-schedule');
 
 const twitterClient = new TwitterClient({
     apiKey: process.env.TWITTER_API_KEY,
@@ -23,7 +24,7 @@ async function reply(t) {
         });
 }
 
-function test(t) {
+function dailyInfo(t) {
     twitterClient.tweets.statusesUpdate({
         "status": "Roaaaaaaaaaaar!"
     }).catch(
@@ -32,8 +33,18 @@ function test(t) {
         });
 }
 
+function init() {
 
-read();
-//test();
+    console.log('worker initialized');
 
-// "@" + t.user.screen_name +
+    schedule.scheduleJob('30 07 * * *', function (fireDate) {
+        dailyInfo();
+    });
+
+    schedule.scheduleJob('*/5 * * * *', function (fireDate) {
+        read();
+    });
+}
+
+
+init();
