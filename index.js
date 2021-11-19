@@ -4,7 +4,8 @@ const { TwitterClient } = require('twitter-api-client'),
     repplies = ["Yalnız dinozor olacak o!",
         "Bizim adımız dinozor efendim.",
         "Dinazor değil dinozor!",
-        "a değil o D-İ-N-O-Z-O-R"
+        "a değil o D-İ-N-O-Z-O-R",
+        "Dinazor değildir o, dinazor olsa duramazsın. Dinozor!"
     ];
 
 const twitterClient = new TwitterClient({
@@ -21,7 +22,11 @@ async function read(sinceTweetId) {
 
 async function reply(t) {
 
-    if (t.text.includes("dinozor")) {
+    if (t.text.includes("dinozor") || !t.text.includes("dinazor")) {
+        return;
+    }
+
+    if (t.retweeted) {
         return;
     }
 
