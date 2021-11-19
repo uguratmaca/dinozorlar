@@ -1,6 +1,9 @@
 require('dotenv').config();
 const { TwitterClient } = require('twitter-api-client'),
     schedule = require('node-schedule'),
+    express = require('express'),
+    app = express(),
+    port = process.env.PORT || 3000,
     repplies = ["Yalnız dinozor olacak o!",
         "Bizim adımız dinozor efendim.",
         "Dinazor değil dinozor!",
@@ -83,3 +86,4 @@ async function init() {
 }
 
 init();
+app.listen(port);

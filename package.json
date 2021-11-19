@@ -23,6 +23,7 @@
   "homepage": "https://github.com/uguratmaca/dinozorlar#readme",
   "dependencies": {
     "dotenv": "^10.0.0",
+    "express": "^4.17.1",
     "node-schedule": "^2.0.0",
     "twitter-api-client": "^1.4.0"
   }
