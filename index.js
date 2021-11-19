@@ -30,8 +30,11 @@ async function reply(t) {
         return;
     }
 
+    const status = `@${t.user.screen_name} ${getRandomReply()}`;
+    console.log(status);
+
     await twitterClient.tweets.statusesUpdate({
-        "status": `@${t.user.screen_name} ${getRandomReply()}`,
+        "status": status,
         "in_reply_to_status_id": t.id_str
     }).catch(
         function (error) {
@@ -72,6 +75,8 @@ async function init() {
     // });
 
     schedule.scheduleJob('*/15 * * * *', async function (fireDate) {
+
+        console.log('schedule reply');
         const sinceTweetId = await lastTweetId();
         read(sinceTweetId);
     });
