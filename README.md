@@ -8,4 +8,4 @@ TWITTER_API_SECRET=****************
 TWITTER_ACCESS_TOKEN=****************  
 TWITTER_ACCESS_TOKEN_SECRET=****************  
 
-Run: node index
+Run: node index.js
